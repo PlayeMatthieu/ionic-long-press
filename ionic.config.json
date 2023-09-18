@@ -1,0 +1,7 @@
+{
+  "name": "long-press-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
