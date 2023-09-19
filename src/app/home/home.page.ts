@@ -13,6 +13,8 @@ export class HomePage {
   private data = inject(DataService);
   constructor() {}
 
+  public isScrolling = false;
+
   refresh(ev: any) {
     setTimeout(() => {
       (ev as RefresherCustomEvent).detail.complete();
@@ -21,5 +23,25 @@ export class HomePage {
 
   getMessages(): Message[] {
     return this.data.getMessages();
+  }
+
+  onScroll(event: any): void {
+    if (event.detail.deltaY > 0 || event.detail.deltaY < 0) {
+      this.isScrolling = true;
+      console.log('scrolling');
+    } else if (event.detail.deltaY === 0) {
+      this.isScrolling = true;
+        console.log('end of scrolling');
+    }
+
+    setTimeout(() => {
+      this.isScrolling = false;
+    }, 1000)
+  }
+
+  toggleLongPress(): void {
+    if (!this.isScrolling) {
+      console.error('<!!>longpress<!!>')
+    }
   }
 }

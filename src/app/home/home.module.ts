@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { MessageComponentModule } from '../message/message.module';
+import { LongPressDirective } from '../directive/long-press.directive';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { MessageComponentModule } from '../message/message.module';
     MessageComponentModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, LongPressDirective]
 })
 export class HomePageModule {}

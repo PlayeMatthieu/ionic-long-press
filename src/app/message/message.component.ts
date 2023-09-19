@@ -14,4 +14,8 @@ export class MessageComponent {
   isIos() {
     return this.platform.is('ios')
   }
+
+  itemClick(): void {
+    console.log('item clicked')
+  }
 }
